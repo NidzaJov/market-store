@@ -13,10 +13,5 @@
             Discount = discount;
             Total = total;
         }
-
-        
     }
-
-
-
 }

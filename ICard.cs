@@ -10,6 +10,7 @@ namespace MarketStore
     {
         double InitialDiscountRate { get; set; }
         double Turnover { get; set; }
+        string? Owner { get; set; }
         PurchaseDetails ReturnPurchaseDetails(double PurchaseValue);
     }
 }
