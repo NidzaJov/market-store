@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace MarketStore
 {
@@ -7,7 +8,12 @@ namespace MarketStore
         public void PrintDetails(ICard card, double purchaseValue)
         {
             PurchaseDetails details = card.ReturnPurchaseDetails(purchaseValue);
-            Console.WriteLine(" Purchase value: ${0:F2} \n Discount rate: {1:F1}% \n Discount: ${2:F2} \n Total: ${3:F2}", details.PurchaseValue, details.ActualDiscountRate, details.Discount, details.Total);
+            
+            Console.WriteLine(" Purchase value: {0} \n Discount rate: {1}% \n Discount: {2} \n Total: {3}", 
+                details.PurchaseValue.ToString("C2",new CultureInfo("en-US")), 
+                details.ActualDiscountRate.ToString("F1", new CultureInfo("en-US")), 
+                details.Discount.ToString("C2", new CultureInfo("en-US")), 
+                details.Total.ToString("C2", new CultureInfo("en-US")));
 
         }
     }
