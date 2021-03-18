@@ -10,12 +10,12 @@
             InitialDiscountRate = 2;
             Turnover = turnover;
         }
-        public PurchaseDetails ReturnPurchaseDetails(double purchaseValue)
+        public (double, double, double, double) ReturnPurchaseDetails(double purchaseValue)
         {
             double actualDiscountRate = Turnover > 300 ? 3.5 : 0;
             double discount = purchaseValue * actualDiscountRate / 100;
             double total = purchaseValue - discount;
-            return new PurchaseDetails(purchaseValue, actualDiscountRate, discount, total);
+            return (purchaseValue, actualDiscountRate, discount, total);
         }
     }
 }
